@@ -23,8 +23,9 @@ urlpatterns = [
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('user/', include('userapp.urls')),
-    path('manage/', include('adminapp.urls')),
+  path('groups/', views.group_list, name='group_list'),
+    path('groups/create/', views.group_create, name='group_create'),
+    path('groups/edit/<int:pk>/', views.group_edit, name='group_edit'),
+    path('groups/delete/<int:pk>/', views.group_delete, name='group_delete'),
 ]
 ]
